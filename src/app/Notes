@@ -1,0 +1,6 @@
+ANGULAR FEATURES
+================
+    1.Component
+        app-component is root component
+    2.Module
+        app-module is root module
