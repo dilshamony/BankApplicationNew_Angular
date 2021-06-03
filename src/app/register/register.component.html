@@ -1,0 +1,28 @@
+<!-- <p>register works!</p> -->
+<!-- TEMPLATE DRIVEN FORMS -->
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <div class="main">
+                <h4>Welcome To Yes Bank<br>
+                    <h5>Register Here!!!</h5>
+                </h4><br>
+
+                <form (ngSubmit)="register()">
+                    <input id="uname" type="text" class="text" name="uname" [(ngModel)]="uname" placeholder="User Name"><br><br>
+                    <input id="accnotext" type="text" class="text" name="acno" [(ngModel)]="acno" placeholder="Account Number"><br><br>
+
+                    <input id="pwdtext" type="password" class="text" name="pswd" [(ngModel)]="pswd" placeholder="Password"><br> <br>
+
+                    <input type="submit" value="Register" class="button butefct"> <br>
+                    <a class="textfp" href="#">Log In</a>
+                </form>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+
