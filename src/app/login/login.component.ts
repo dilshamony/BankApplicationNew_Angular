@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -13,7 +14,11 @@ export class LoginComponent implements OnInit {
   acno = "Account Number Please";
   pswd = "";
 
-  constructor(private router: Router, private dataService: DataService) { }
+  loginForm=this.fb.group({
+    acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
+    }) 
+  constructor(private router: Router, private dataService: DataService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -28,8 +33,8 @@ export class LoginComponent implements OnInit {
   login() {
     //alert("Login Clicked")
     //console.log(a.value,p.value);
-    var accno = this.acno;
-    var pswd = this.pswd;
+    var accno = this.loginForm.value.acno;//var accno = this.acno;
+    var pswd = this.loginForm.value.pswd; // var pswd = this.pswd;
     // let dataset=this.dataService.account_details;
     // if (accno in dataset){
     //   if (pswd==dataset[accno]["password"]){
@@ -43,11 +48,16 @@ export class LoginComponent implements OnInit {
     // else{
     //   alert("Invalid Account Number")
     // }
-    const result = this.dataService.login(accno, pswd)
-    if (result) {
-      alert("Successfully Logged In")
-      this.router.navigateByUrl("dashboard")
-    }
+    if(this.loginForm.valid){
+    const result = this.dataService.login(accno, pswd)//
+    if (result) {//
+      alert("Successfully Logged In")//
+      this.router.navigateByUrl("dashboard")//
+    }//
+  }//
+  else{
+    alert("Invalid Form")
+  }
   }
   register() {
     this.router.navigateByUrl("register");

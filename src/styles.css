@@ -38,7 +38,7 @@ body{
 
 
 .button{
-    background-color: #e69e04;
+    background-color: rgb(224, 77, 77);
     border: none;
     border-radius: 6px;
     font-size:20px;
@@ -52,7 +52,7 @@ body{
 }
 .button:hover,button:hover{
     outline: none !important;
-    background-color: #c29503;
+    background-color: rgb(51, 51, 45);
 }
 .butefct {
     cursor: pointer;
@@ -63,14 +63,24 @@ body{
 }
 
 .button1{
-    background-color: #9e3403;
+    background-color: black;
     width: 100%;
     font-size: 17px;
     
 }
 .button1:hover,.button1:hover{
     outline: none !important;
-    background-color: #be0b05;
+    background-color: #32a852;
+}
+.button2{
+    background-color: green;
+    width: 100%;
+    font-size: 17px;
+    
+}
+.button2:hover,.button1:hover{
+    outline: none !important;
+    background-color: #32a852;
 }
 h4{
     text-align: center;
@@ -115,4 +125,10 @@ line-height: 1.34;
 }
 .alink:hover,.alink:hover{
     text-decoration: underline;
+}
+.button3{
+    background-color: rgb(82, 78, 78);
+    width: 100%;
+    font-size: 17px;
+    width: 450px;
 }

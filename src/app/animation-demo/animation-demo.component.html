@@ -1,0 +1,5 @@
+<!-- <p>animation-demo works!</p> -->
+<div [@openClose] = "isOpen? 'open' : 'close' " >
+    <h1>I'm now {{isOpen? "open" : "close" }}</h1>
+    <button (click)="toggle()">TOGGLE</button>
+</div>

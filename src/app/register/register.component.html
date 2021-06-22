@@ -1,6 +1,6 @@
 <!-- <p>register works!</p> -->
 <!-- TEMPLATE DRIVEN FORMS -->
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
@@ -23,6 +23,35 @@
         </div>
         <div class="col-4"></div>
     </div>
+</div> -->
+
+
+<!-- MODEL DRIVEN FORMS- REACTIVE FORMS -->
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <div class="main">
+                <h4>Welcome To Yes Bank<br>
+                    <h5>Register Here!!!</h5>
+                </h4><br>
+
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    <input id="uname" type="text" class="text" name="uname" formControlName="uname" placeholder="User Name"><br>
+                    <div *ngIf="(this.registerForm.get('uname')?.touched || this.registerForm.get('uname')?.dirty) && this.registerForm.get('uname')?.errors" class="error">Invalid User Name</div><br>
+
+                    <input id="accnotext" type="text" class="text" name="acno" formControlName="acno" placeholder="Account Number"><br>
+                    <div *ngIf="(this.registerForm.get('acno')?.touched || this.registerForm.get('acno')?.dirty) && this.registerForm.get('acno')?.errors" class="error">Invalid Account Number</div><br>
+
+                    <input id="pwdtext" type="password" class="text" name="pswd" formControlName="pswd" placeholder="Password"><br>
+                    <div *ngIf="(this.registerForm.get('pswd')?.touched || this.registerForm.get('pswd')?.dirty) && this.registerForm.get('pswd')?.errors" class="error">Invalid Password </div><br>
+
+                    <input type="submit" value="Register" class="button butefct"> <br>
+                    <a class="textfp" href="#">Log In</a>
+                </form>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
 </div>
-
-

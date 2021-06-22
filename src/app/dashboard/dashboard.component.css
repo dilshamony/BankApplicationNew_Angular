@@ -1,0 +1,11 @@
+.error{
+    color: red;
+}
+h1{
+    color: rgb(128, 13, 156);
+    margin-left: 75px;
+}
+.deleteStyle{
+    background-color: gray;
+    opacity: 0.2;
+}
