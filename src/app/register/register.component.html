@@ -1,0 +1,32 @@
+<!-- <p>register works!</p> -->
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <div class="main">
+                    <h5>REGISTRATION</h5>
+               <br>
+
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    <input id="uname" type="text" class="text" name="uname" formControlName="uname" placeholder="User Name"><br>
+                    <div *ngIf="(this.registerForm.get('uname')?.touched || this.registerForm.get('uname')?.dirty) && this.registerForm.get('uname')?.errors" class="error">Invalid User Name</div><br>
+
+                    <input id="accnotext" type="text" class="text" name="uid" formControlName="uid" placeholder="User Id"><br>
+                    <div *ngIf="(this.registerForm.get('uid')?.touched || this.registerForm.get('uid')?.dirty) && this.registerForm.get('uid')?.errors" class="error">Invalid User Id</div><br>
+
+                    <input id="pwdtext" type="password" class="text" name="pswd" formControlName="pswd" placeholder="Password"><br>
+                    <div *ngIf="(this.registerForm.get('pswd')?.touched || this.registerForm.get('pswd')?.dirty) && this.registerForm.get('pswd')?.errors" class="error">Incorrect Password</div><br>
+
+                    <!-- <input type="submit" value="Register" class="button butefct"> <br> -->
+                   <div>
+                       <button type="submit" class="btn btn-success" id="butt">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+                    <button type="submit" class="btn btn-primary" id="butt" (click)="login()">Login</button>
+                   </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

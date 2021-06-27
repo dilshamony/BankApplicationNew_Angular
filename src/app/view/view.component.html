@@ -1,0 +1,23 @@
+<!-- <p>view works!</p> -->
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+            <div class="col-4">
+                <div class="main">
+                    <table class="table">
+                        <tr>
+                            <td appHighlight>DATE</td>
+                            <td appHighlight>EVENT</td>
+                        </tr>
+                        <tr *ngFor='let events of allevents'>
+                            <td >{{events.eventdate}}</td>
+                            <td>{{events.eventname}}</td>
+                             
+                        </tr>
+                    </table>
+                    <button type="submit" class="btn btn-primary" (click)="back()">Back Home</button>
+                </div>
+            </div>
+        <div class="col-4"></div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<!-- <p>dashboard works!</p> -->
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <div [ngClass]="userid? 'deleteStyle' : ''" class="main">
+                <h4>Welcome {{user}}</h4>
+                <h4 >EVENT FORM</h4><br>
+                <form [formGroup]="eventForm" (ngSubmit)="eventAdder()">
+
+
+                    <input id="log" type="text" class="text" name="uid" formControlName="uid" placeholder="User Id"><br><br>
+
+                    <input id="pass" type="text" class="text" name="events" formControlName="events" placeholder="Event Details"><br><br>
+                    
+                    <input id="amo" type="text" class="text" name="edate" formControlName="edate" placeholder="Event Date"><br><br>
+
+                    <div class="but">
+                        <button type="submit" class="btn btn-success" id="butt">Add Event</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-warning" id="set1" (click)="view()">View Events</button>
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-outline-primary" (click)="logout()">Log Out</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" (click)="deleteAcc()" class="btn btn-outline-danger">Delete Account</button>
+                </form>
+            </div>
+        <br>
+        <br>
+        <app-delete (onDelete)="onDelete($event)" (onCancel)="onCancel()" [item]="userid"></app-delete>
+        <br>
+        <br>
+        <!-- <button type="submit" class="btn btn-outline-primary" (click)="logout()">Log Out</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <!-- <button type="submit" (click)="deleteAcc()" class="btn btn-outline-danger">Delete Account</button> -->
+    </div>     
+   </div>
+</div>

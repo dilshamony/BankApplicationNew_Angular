@@ -1,0 +1,5 @@
+ <div class="iDelete" *ngIf="item != '' ">
+    <p>Are You Sure Do You Want To DELETE This Account {{item}}?</p>
+    <button type="submit" (click)="delete()">DELETE</button>
+    <button type="submit" (click)="cancel()">CANCEL</button>
+</div>

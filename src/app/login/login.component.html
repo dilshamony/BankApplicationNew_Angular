@@ -1,0 +1,29 @@
+<!-- <p>login works!</p> -->
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            
+            <div class="main">
+                <h4>REMINDER APP LOGIN</h4><br>
+            
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+            
+            <input id="accnotext" type="text" class="text" name="usid" formControlName="usid" placeholder="User Id"><br>
+            <div *ngIf="(this.loginForm.get('usid')?.touched || this.loginForm.get('usid')?.dirty) && this.loginForm.get('usid')?.errors" class="error">Invalid User Id</div><br>     
+
+            <input id="pwdtext" type="password" class="text" name="pswd" formControlName="pswd" placeholder="Password" ><br>
+            <div *ngIf="(this.loginForm.get('pswd')?.touched || this.loginForm.get('pswd')?.dirty) && this.loginForm.get('pswd')?.errors" class="error">Incorrect Password</div><br>
+
+            <div>
+                <button type="submit" class="btn btn-success" id="butt">Log In</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         
+             <button type="submit" class="btn btn-primary" id="but" (click)="register()">Register</button>
+            </div>           
+                <a class="textfp" href="#">Forgotten password?</a>
+           <div class="line"></div>
+            </form>
+        </div></div>
+        <div class="col-4"></div>
+    </div>
+</div>
